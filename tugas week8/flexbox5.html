@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexBox5</title>
+    <style>
+        body{
+            background-color: whitesmoke;
+            height: 100%;
+            padding: 0;
+            margin:  0;
+        }
+        .container{
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 5px;
+        }
+        header{
+            background-color: aqua;
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+        }
+        main{
+            height: 500px;
+            display: flex;
+            margin: 10px;
+            justify-content: space-around;
+        }
+        aside{
+            background-color: palevioletred;
+            margin: 10px;
+            flex: 1;
+            padding: 10px;
+        }
+        article{
+            background-color: rgb(191, 0, 255);
+            flex: 3;
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            padding: 10px;
+            margin: 10px;
+        }
+        img{
+            padding: 20px;
+        }
+        footer{
+            background-color: aqua;
+            padding: 20px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>Headaer</header>
+        <main>
+            <aside>Aside</aside>
+            <article>
+                <img src="images/desktop-wallpaper-bts-enhypen-logo.jpg" width="200px" alt="">
+                <img src="images/download (4).jpg" width="200px" alt="">
+                <img src="images/download (6).jpg" width="200px" alt="">
+            </article>
+        </main>
+
+        <footer>Footer</footer>
+    </div>
+</body>
+</html>
