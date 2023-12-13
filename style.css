@@ -1,0 +1,156 @@
+* {
+    margin: auto;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+.hero {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(grey,black),url(images/Rodi\ Motor\ Services\ \(3\).jpeg);
+    background-repeat: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+nav{
+    color: rgb(230, 230, 83);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:50px 8% 0 8% ;
+}
+.logo {
+   color: rgb(212, 212, 78); 
+   font-size: 20px;
+   letter-spacing: -1px;
+   cursor: pointer;
+}
+span {
+    color: rgb(250, 230, 11);
+}
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 10px 25px;
+}
+nav ul li {
+    text-decoration: none;
+    color: rgb(233, 249, 15);
+    font-weight: bold;
+}
+.content {
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    transform: translate(-50%);
+}
+h1{
+    color: rgb(248, 244, 244);
+    font-size: 40px;
+    margin: 10px 0px 10px;
+    text-align: center;
+
+}
+h2 {
+    color: black;
+    font-size: 30px;
+    margin:auto;
+    text-align: center;
+}
+h3 {
+    color: rgb(208, 208, 80);
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+h4{
+    color: black;
+    letter-spacing: 2px;
+    font-size: 15px;
+    text-align: center;
+}
+.new form{
+    max-width: 100%;
+    position: relative;
+}
+.new form input:first-child{
+    display: inline-block;
+    width: 100%;
+    padding: 14px 130px 14px 15px;
+    border: 2px solid grey;
+    outline: none;
+    border-radius: 30px;
+}
+
+footer{
+   background-color: black; 
+}
+.footerContainer{
+    width: 100%;
+    padding: 70px 30px 20px;
+}
+.sosialicons{
+    display: flex;
+    justify-content:center;
+}
+.sosialicons a{
+    text-decoration: none;
+    padding: 10px;
+    background-color: rgb(238, 184, 24);
+    margin: 10px;
+    border-radius: 50%;
+}
+.sosialicons a i{
+    font-size: 2em;
+    color:black;
+    opacity: 0.9;
+}
+
+.sosialicons a:hover{
+    background-color: gray;
+    transition: 0.5s;
+}
+.footerNav{
+    margin: 30px 0;
+}
+.footerNav ul{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+.footerNav ul li a{
+    color: rgb(238, 184, 24);
+    margin: 20px;
+    text-decoration: none;
+    font-size: 1.3em;
+    opacity: 0.7;
+    transition: 0.5s;
+}
+.footerNav ul li a:hover{
+    opacity: 1;
+}
+.footerBottom{
+    background-color: black;
+    padding: 20px;
+    text-align: center;
+
+}
+.footerBottom p{
+    color: rgb(238, 184, 24);
+}
+.desaigner{
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0px 5px;
+}
+@media (max-width: 700px){
+    .footerNav ul{
+        flex-direction: column;
+    }
+    .footerNav ul li{
+        width: 100%;
+        text-align: center;
+        margin: 10px;
+    }
+}
