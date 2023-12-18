@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kurs Rupiah</title>
+  <style>
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+    }
+    fieldset{
+        color: rgb(14, 13, 13);
+        background-color: rgb(153, 230, 250);
+        position: fixed;
+           
+    }
+    h2{
+        text-align: center;
+        color: black;
+    }
+    div{
+        text-align: center;
+        color: black;
+    }
+    .button{
+        text-align: center;
+    }
+    p{
+        text-align: center;
+        color: black;
+    }
+    hr{
+        color: black;
+    }
+  </style>
+</head>
+<body>
+    <fieldset>
+  <h2>Menghitung Kurs Rupiah</h2>
+  <div>
+  <label for="uangRupiah">Jumlah uang :</label>
+  <input type="number" id="uangRupiah" placeholder=" Masukkan jumlah uang dalam Rupiah">
+  <button onclick="hitungKurs()">On Click Here</button>
+</div>
+<br>
+<hr>
+  <p>Nilai dalam Dollar: <span id="nilaiDollar"></span>
+    <br>
+    Nilai dalam Won: <span id="nilaiWon"></span>
+</p>
+</fieldset>
+
+  <script>
+    function hitungKurs(){
+      let kurs1 = 14000;
+      let kurs2 = 8500;
+      let uangRupiah = document.getElementById("uangRupiah").value;
+      let nilaiRupiah = document.getElementById("uangRupiah").value;
+      let nilaiDollar = uangRupiah / kurs1;
+      let nilaiWon = uangRupiah / kurs2;
+      document.getElementById("nilaiDollar").innerText = nilaiDollar + " Dollar";
+      document.getElementById("nilaiWon").innerText = nilaiWon + " Won";
+    }
+  </script>
+
+</body>
+</html>
