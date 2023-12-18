@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menghitung Luas dan Keliling Lingkaran</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        fieldset{
+            color: rgb(14, 13, 13);
+            background-color: burlywood;
+            display:block;
+            position: absolute;   
+        }
+        h2{
+            text-align: center;
+            color: black;
+        }
+        div{
+            text-align: center;
+            color: black;
+        }
+        .button{
+            text-align: center;
+        }
+        p{
+            text-align: center;
+            color: black;
+        }
+        hr{
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+    <h2>Menghitung Luas dan Keliling Lingkaran</h2>
+    <div>
+        <label for="jari2">Masukan Nilai Jari-jari</label>
+        <input type="number" id="jari2" placeholder="nilai jari-jari">
+        <button onclick="hitunglingkaran()">On Click Here</button>
+    </div>
+    <br>
+    <hr>
+    <p>
+        Luas Lingkaran : <span id="hasilluas">0</span>
+        <br>
+        Keliling Lingkaran : <span id="hasilkeliling">0</span>
+    </p>
+    <br>
+    </fieldset>
+    <script>
+        function hitunglingkaran(){
+            let jari2 = document.getElementById("jari2").value
+            const phi = 3.14
+            let luas = phi * jari2 * jari2
+            let keliling = 2 * phi * jari2
+
+            console.log("Luas:" + luas)
+            console.log("Keliling :" + keliling)
+
+            let hasilluas = document.getElementById("hasilluas" )
+            let hasilkeliling = document.getElementById("hasilkeliling" )
+
+            hasilluas.innerHTML = luas
+            hasilkeliling.innerHTML = keliling
+        }
+    </script>
+</body>
+</html>
