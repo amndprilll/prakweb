@@ -1,42 +1,154 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <title>Form Data Penduduk</title>
-    </head>
-    <body>
-        <h2 style="text-align: center:">Form Input Data Penduduk</h2>
-        <form action="hasil.html" method="post">
-            <fieldset>
-                <legend><b>Form Input</b></legend>
-                <label for="nama">Nama :</label>
-                <input type="text" name="nama" id="nama">
-                
-                <br>
-                <br>
-                
-                <label for="agama">agama</label>
-                <select name="agama" id="agama">
-                    <option value="islam">Islam</option>
-                    <option value="kristen">Kristen</option>
-                    <option value="buddha">Buddha</option>
-                    <option value="hindu">Hindu</option>
-                </select>
-                <br>
-                <br>
-                <label for="jk">Jenis Kelamin : </label>
-                <input type="radio" name="jk" id="jk" value="perempuan">
-                <label for="">perempuan</label>
-                <input type="radio" name="jk" id="jk"  value="perempuan">
-                <label for="">laki-laki</label>
-                <br>
-                <br>
-                <label for="">Foto</label>
-                <input type="file">
-                <br>
-                <br>
-                <input type="submit" value="simpan" id="simpan">
-            </fieldset>
-        </form>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Login</title>
+<style>
+    body {
+        background-color: rgb(158, 158, 238);
+    }
+    h1{
+        color: rgb(13, 19, 91)e;
+        font-family: 'Times New Roman', Times, serif;
+        text-align: center;
+    }
+    form {
+        text-align: center;
+        color: rgb(13, 19, 91);
+    }
+    button {
+        background-color:rgb(13, 19, 91) ;
+        color: rgb(158, 158, 238);
+    }
+
+</style>
+</head>
+<body>
+    <h1>Form Registrasi Tiket</h1>
+    <form id="formLogin">
+        <label for="nama">Nama :</label><br>
+        <input type="text" id="nama" name="nama" maxlength="30" placeholder="Masukkan Nama anda">
+        <br>
+        <label for="email">Email:</label>
+        <br>
+        <input type="email" id="email" name="email" placeholder="Masukkan email anda">
+        <br>
+        <label for="waktu">Jam Keberangkatan:</label>
+        <br>
+        <input type="time" id="waktu" name="waktu">
+        <br>
+        <label for="tujuan">Tujuan Keberangkatan:</label>
+        <br>
+        <input type="text" id="tujuan" name="tujuan" placeholder="Tujuan keberangkatan">
+        <br>
+        <label for="tiket">Jumlah Tiket:</label><br>
+        <input type="number" id="tiket" name="tiket" min="1" max="10">
+        <br>
+        <br>
+        <button type="submit" value="Submit">Submit</button>
+    </form> 
+    
+    <script>
+        const form = document.getElementById('formLogin');
+        form.addEventListener('submit', (event) => {
+        event.preventDefault();
+    
+        const nama = form.nama.value;
+        const email = form.email.value;
+        const waktu = form.waktu.value;
+        const tujuan = form.tujuan.value;
+        const jumlahTiket = form.tiket.value;
+    
+        if (!nama) {
+            const errorMessage = document.createElement('div');
+            errorMessage.innerHTML = 'Nama pelanggan harus diisi';
+            errorMessage.style.color = 'red';
+
+            const checkErr = form.nama.parentNode.querySelector('div');
+            if (!checkErr) {
+            form.nama.parentNode.insertBefore(errorMessage, form.nama.nextSibling);
+            form.nama.focus();
+            setTimeout(() => {
+                errorMessage.remove();
+            }, 2500);
+            }
+            return;
+        }
+        if (!email) {
+            const errorMessage = document.createElement('div');
+            errorMessage.innerHTML = 'Email harus diisi';
+            errorMessage.style.color = 'red';
+
+            const checkErr = form.email.parentNode.querySelector('div');
+            if (!checkErr) {
+            form.email.parentNode.insertBefore(errorMessage, form.email.nextSibling);
+            form.email.focus();
+            setTimeout(() => {
+                errorMessage.remove();
+            }, 2500);
+            }
+            return;
+        }
+        if (!waktu) {
+            const errorMessage = document.createElement('div');
+            errorMessage.innerHTML = 'waktu harus diisi';
+            errorMessage.style.color = 'red';
+
+            const checkErr = form.waktu.parentNode.querySelector('div');
+            if (!checkErr) {
+            form.jamKeberangkatan.parentNode.insertBefore(errorMessage, form.waktu.nextSibling);
+            form.jamKeberangkatan.focus();
+            setTimeout(() => {
+                errorMessage.remove();
+            }, 2500);
+            }
+            return;
+        }
+        if (!tujuan) {
+            const errorMessage = document.createElement('div');
+            errorMessage.innerHTML = 'Tujuan keberangkatan harus diisi';
+            errorMessage.style.color = 'red';
+
+            const checkErr = form.tujuan.parentNode.querySelector('div');
+            if (!checkErr) {
+            form.tujuan.parentNode.insertBefore(errorMessage, form.tujuan.nextSibling);
+            form.tujuan.focus();
+            setTimeout(() => {
+                errorMessage.remove();
+            }, 2500);
+            }
+
+            return;
+        }
+        if (!tiket || tiket < 1 || tiket > 10) {
+            const errorMessage = document.createElement('div');
+            errorMessage.innerHTML = ' tiket harus diisi';
+            errorMessage.style.color = 'red';
+
+            const checkErr = form.tiket.parentNode.querySelector('div');
+            if (!checkErr) {
+            form.tiket.parentNode.insertBefore(errorMessage, form.tiket.nextSibling);
+            form.tiket.focus();
+            setTimeout(() => {
+                errorMessage.remove();
+            }, 2500);
+            }
+            return;
+        }
+        const formData = `
+            Nama : ${nama}
+            Email : ${email}
+            Waktu: ${waktu}
+            Tujuan : ${tujuan}
+            Tiket: ${tiket}
+        `;
+        document.body.innerHTML += <pre>${formData}</pre>;
+    
+        alert('Data berhasil dikirim');
+        });
+        
+    </script>
+</body>
 </html>
